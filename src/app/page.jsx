@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import DarkModeToggle from "./components/utils/DarkModeToggle";
+import NavBar from "./components/utils/NavBar";
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const toggleDarkMode = () => {
@@ -9,16 +9,12 @@ export default function Home() {
 
   return (
     <div>
-      {" "}
+      <NavBar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <div
         className={`${
-          darkMode && "bg-[#1d1d1d] text-white transition-colors duration-50"
+          darkMode && "bg-stone-900 text-white transition-colors duration-50"
         } bg-[#f4f1e5] h-screen transition-colors duration-1000`}
-      >
-        <button className="" onClick={toggleDarkMode}>
-          <DarkModeToggle />
-        </button>
-      </div>
+      ></div>
     </div>
   );
 }
