@@ -8,36 +8,33 @@ const NavBar = ({ darkMode, toggleDarkMode }) => {
       : "text-black hover:text-stone-500 transition-colors duration-400"
   }`;
   return (
+    //
     <motion.nav
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1 }}
       className={`${
         darkMode && "bg-stone-900 transition-colors duration-50"
-      }  transition-colors duration-1000 fixed left-0 top-0 h-full bg-[#f4f1e5] w-30 flex flex-col
-      justify-between p-5 `}
+      }  transition-colors duration-1000 fixed left-0 top-0 h-full bg-[#f4f1e5] sm:w-30
+      flex flex-col justify-between p-4 sm:p-10 text-xs sm:text-base`}
     >
       <div>
-        <ul className="flex flex-col space-y-10 ">
+        <ul className="flex mt-64 space-y-5 flex-col">
           <li>
             <Link href="/">
-              <span className={linkStyling}>home</span>
+              <span className={linkStyling}>Home</span>
             </Link>
           </li>
           <li>
-            <Link href="/#about">
-              <span className={linkStyling}>about</span>
+            <Link href="/about">
+              <span className={linkStyling}>About</span>
             </Link>
           </li>
           <li>
-            <Link href="/#work">
-              <span className={linkStyling}>work</span>
+            <Link href="/work">
+              <span className={linkStyling}>Work</span>
             </Link>
           </li>
           <li>
-            <Link href="/#contact">
-              <span className={linkStyling}>contact</span>
+            <Link href="/contact">
+              <span className={linkStyling}>Contact</span>
             </Link>
           </li>
         </ul>
