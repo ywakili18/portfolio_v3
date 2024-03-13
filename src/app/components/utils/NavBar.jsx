@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const NavBar = ({ darkMode, toggleDarkMode }) => {
   const linkStyling = `${
     darkMode
-      ? "text-white hover:text-stone-600 transition-colors duration-400"
+      ? "text-white hover:text-stone-400 transition-colors duration-400"
       : "text-black hover:text-stone-500 transition-colors duration-400"
   }`;
   return (
@@ -12,8 +12,8 @@ const NavBar = ({ darkMode, toggleDarkMode }) => {
     <motion.nav
       className={`${
         darkMode && "bg-stone-900 transition-colors duration-50"
-      }  transition-colors duration-1000 fixed left-0 top-0 h-full bg-[#f4f1e5] sm:w-30
-      flex flex-col justify-between p-4 sm:p-10 text-xs sm:text-base`}
+      }  transition-colors duration-500 fixed left-0 top-0 h-full bg-[#f4f1e5] sm:w-30
+      flex flex-col justify-between p-4 sm:p-10 text-sm`}
     >
       <div>
         <ul className="flex mt-64 space-y-5 flex-col">
