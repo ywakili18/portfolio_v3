@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 const space_grotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
@@ -27,24 +27,20 @@ export default function RootLayout({ children }) {
           <NavBar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           <div
             className={`${
-              darkMode &&
-              "bg-stone-800 text-stone-300 transition-colors duration-50"
-            } bg-[#fffefa] h-screen transition-colors duration-500`}
+              darkMode
+                ? "bg-darkBackground text-darkPrimaryText"
+                : "bg-lightBackground text-lightPrimaryText"
+            }  h-screen transition-colors duration-50`}
           >
             {children} {/* Render children directly */}
             <footer
               className={`${
-                darkMode &&
-                "text-white transition-colors duration-50 fixed bottom-0 right-0"
-              } "text-black transition-colors duration-50 fixed bottom-2 right-3 `}
+                darkMode
+                  ? "text-stone-500 transition-colors duration-50 fixed bottom-0 right-3 tracking-wide font-light text-xs sm:text-base"
+                  : "text-stone-500 transition-colors duration-50 fixed bottom-0 right-3 tracking-wide font-light text-xs sm:text-base"
+              }`}
             >
-              <span
-                className={`${
-                  darkMode && "text-sm tracking-widest text-stone-200"
-                }, text-sm tracking-widest text-stone-700`}
-              >
-                yousof.dev ©2024
-              </span>
+              <span>yousof.dev ©2024</span>
             </footer>
           </div>
         </motion.div>
