@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { IoCodeSlashSharp } from "react-icons/io5";
 import DarkModeToggle from "./DarkModeToggle";
 import { motion } from "framer-motion";
 const NavBar = ({ darkMode, toggleDarkMode }) => {
@@ -16,7 +17,10 @@ const NavBar = ({ darkMode, toggleDarkMode }) => {
       flex flex-col justify-between p-4 sm:p-10 text-sm`}
     >
       <div>
-        <ul className="flex mt-64 space-y-5 flex-col">
+        <IoCodeSlashSharp
+          className={`${darkMode && "text-white"} text-2xl sm:text-3xl`}
+        />
+        <ul className="flex mt-60 space-y-5 flex-col">
           <li>
             <Link href="/">
               <span className={linkStyling}>Home</span>
