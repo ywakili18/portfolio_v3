@@ -19,7 +19,7 @@ const DarkModeToggle = () => {
           exit={{ opacity: 0, y: -10, rotate: 45 }}
           transition={{ duration: 0.3 }}
         >
-          <FaRegSun className=" w-6 h-6" />
+          <FaRegSun className="text-xl" />
         </motion.div>
       )}
       {!isSelected && (
@@ -29,7 +29,7 @@ const DarkModeToggle = () => {
           exit={{ opacity: 0, y: -10, rotate: 45 }}
           transition={{ duration: 0.3 }}
         >
-          <FaRegMoon className=" w-6 h-6" />
+          <FaRegMoon className="text-xl" />
         </motion.div>
       )}
     </div>

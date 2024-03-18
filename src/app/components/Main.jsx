@@ -1,47 +1,23 @@
 export default function Main({ darkMode }) {
+  const paragraphFormat = "text-center sm:text-start";
   return (
-    <main className="sm:py-20 sm:px-40 pt-5 pl-24 sm:pl-40">
-      <header className="mb-20">
-        <h1 className=" font-thin sm:text-6xl mt-20 sm:mt-0">Yousof Wakili</h1>
-        <h2 className="text-subheaderText">
-          Full Stack Developer and Designer
+    <main className="sm:py-20 sm:px-40 p-5 sm:pl-60 mt-20 sm:mt-0 ">
+      <header className="mb-14 sm:mb-20 text-center sm:text-start">
+        <h1 className="mt-10 sm:mt-0  sm:text-5xl ">Yousof Wakili</h1>
+        <h2 className="text-subheaderText ">
+          Full Stack Engineer | Front End Enthusiast
         </h2>
       </header>
-      <section className="flex flex-col gap-10 text-sm sm:text-lg">
+      <section className="flex flex-col gap-5 sm:gap-10 text-sm sm:text-lg ">
         {" "}
-        <div>
+        <div className={`${paragraphFormat}`}>
           <p>
-            As a SF Bay Area native dedicated to building web applications that
-            are both functional and beautiful, I am deeply passionate about
-            crafting intuitive and accessible experiences. I strive to ensure
-            that every aspect of the applications I build is not only
-            aesthetically pleasing but also seamlessly functional.
-          </p>
-        </div>
-        <div className="">
-          <p>
-            Currently, I'm working as a{" "}
-            <a
-              className="font-bold hover:text-subheaderText transition-all"
-              href="https://www.21pstem.org/encompass"
-            >
-              full-stack engineer at 21st Century Partnership for STEM Education
-            </a>
-            , where my focus lies in identifying and implementing innovative
-            solutions to transform education and empower learners.
-          </p>
-        </div>
-        <div>
-          {" "}
-          <p>
-            {" "}
-            My role involves a diverse range of responsibilities, where I tackle
-            everything from debugging and troubleshooting to crafting APIs,
-            integrating new features, and enhancing the overall aesthetic appeal
-            of our applications. I also assist in overseeing product management
-            and establishing effective communication channels with Encompass
-            staff for feature implementation, bug fixes, and requirement
-            gathering.
+            Born and raised in the San Francisco Bay Area, I'm dedicated to
+            building web applications that are both functional and beautiful, I
+            am deeply passionate about crafting intuitive and accessible
+            experiences. I strive to ensure that every aspect of the
+            applications I build is not only aesthetically pleasing but also
+            seamlessly functional.
           </p>
         </div>
       </section>

@@ -1,39 +1,32 @@
-import { motion } from "framer-motion";
+import TechStack from "../components/TechStack";
+import AboutMe from "../components/AboutMe";
+import Timeline from "../components/Timeline";
 export const metadata = {
   title: "Yousof Wakili | About",
 };
 
 export default function Page() {
   return (
-    <main className="sm:py-20 sm:px-40 pt-5 pl-24 sm:pl-40">
-      <header className="mb-20">
-        <h1 className=" font-thin sm:text-6xl mt-20 sm:mt-0">About Me</h1>
-        <h2>Full Stack Developer and Designer</h2>
-      </header>
-      <section className="flex flex-col gap-10 text-sm sm:text-lg">
-        {" "}
+    <div className="">
+      {" "}
+      {/* Assuming bg-dark is your dark mode background */}
+      <main className="sm:pt-[70px] sm:px-20 sm:py-20 sm:pl-44 sm:flex flex-col lg:flex-row sm:items-center sm:justify-between">
         <div>
-          <p>
-            I am a SF Bay Area native focused on building web applications that
-            are functional and beautiful. I am passionate about creating
-            experiences that are intuitive and accessible. Based out of the SF
-            Bay Area.
-          </p>
+          <div className="lg:flex lg:items-center lg:justify-between">
+            <section className="lg:w-1/2">
+              <AboutMe />
+            </section>
+            <section>
+              <TechStack />
+            </section>
+          </div>
+          <div>
+            <section>
+              <Timeline />
+            </section>
+          </div>
         </div>
-        <div className="">
-          <p>
-            Currently, I work as a{" "}
-            <a
-              className="font-bold hover:text-stone-400 cursor-pointer "
-              href="https://www.21pstem.org/encompass"
-            >
-              full-stack engineer at 21st Century Partnership for STEM Education
-            </a>
-            , dedicated to identifying and implementing ways to transform
-            education to empower learners and improve lives.{" "}
-          </p>
-        </div>
-      </section>
-    </main>
+      </main>
+    </div>
   );
 }

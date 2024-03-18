@@ -20,9 +20,13 @@ module.exports = {
         // Light Mode
         lightBackground: "#fffefa",
         lightPrimaryText: "#292524",
+        navLightBackground: "#f4f1e5",
 
         // Global
         subheaderText: "#8c8c8c", // Light accent text as a shade of grey
+      },
+      screens: {
+        xs: "400px", // Custom breakpoint for extra-small devices
       },
     },
   },
