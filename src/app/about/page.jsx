@@ -8,9 +8,10 @@ export const metadata = {
 export default function Page() {
   return (
     <div className="">
-      {" "}
-      {/* Assuming bg-dark is your dark mode background */}
-      <main className="sm:pt-[70px] sm:px-20 sm:py-20 sm:pl-44 sm:flex flex-col lg:flex-row sm:items-center sm:justify-between">
+      <main
+        className="sm:px-20 sm:py-20 sm:pl-44 
+      sm:flex flex-col lg:flex-row sm:items-center sm:justify-between"
+      >
         <div>
           <div className="lg:flex lg:items-center lg:justify-between">
             <section className="lg:w-1/2">
