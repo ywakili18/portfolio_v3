@@ -66,7 +66,7 @@ export default function WorkInfo() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="flex flex-col lg:flex-row pb-10  items-center sm:items-start shadow-lg rounded-lg hover:shadow-2xl transition-all"
+            className="flex flex-col lg:flex-row pb-10  sm:mb-10 items-center sm:items-start shadow-lg rounded-lg hover:shadow-2xl transition-all"
           >
             {/* Image container */}
             <div className="flex-shrink-0 mb-4 sm:mb-0">

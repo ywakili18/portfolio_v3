@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 const space_grotesk = Montserrat({ subsets: ["latin"] });
 
 export default function Layout({ children }) {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };

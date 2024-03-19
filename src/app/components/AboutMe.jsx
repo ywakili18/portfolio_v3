@@ -1,7 +1,15 @@
+"use client";
+import { motion } from "framer-motion";
 export default function AboutMe() {
   const paragraphFormat = "text-center sm:text-start";
   return (
-    <section className="mt-[85px] lg:mt-0">
+    <motion.div
+      className="mt-[85px] lg:mt-0"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
       <header className=" mb-5 sm:mb-20 text-center sm:text-start">
         <h1 className="sm:text-5xl pt-5">About Me</h1>
         <h2 className="text-subheaderText text-sm  md:text-base">
@@ -34,6 +42,6 @@ export default function AboutMe() {
           </p>
         </div>
       </div>
-    </section>
+    </motion.div>
   );
 }
