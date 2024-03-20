@@ -1,6 +1,5 @@
 "use client";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
 export default function Timeline() {
   const events = [
     {
@@ -71,59 +70,50 @@ export default function Timeline() {
         "B2B sales, client relationship management, and technical support for T-Mobile products and services. ",
     },
   ];
-  const entryVariants = {
-    hidden: { opacity: 0, x: -10 },
-    visible: {
+  const techStackVariants = {
+    offscreen: {
+      opacity: 0,
+      y: -20,
+    },
+    onscreen: {
       opacity: 1,
-      x: 0,
+      y: 0,
     },
   };
+
   return (
     <div className="text-xs mt-10">
       {events.map(
-        ({ year, title, company, description, techStackItems }, index) => {
-          const controls = useAnimation();
-          const ref = useRef(null);
-          const inView = useInView(ref, { once: true });
-
-          useEffect(() => {
-            if (inView) {
-              controls.start("visible");
-            }
-          }, [controls, inView]);
-
-          return (
-            <motion.div
-              key={index}
-              ref={ref}
-              variants={entryVariants}
-              initial="hidden"
-              animate={controls}
-              className="flex items-start mb-5 hover:shadow-lg hover:shadow-accentBackground p-2 rounded transition-all"
-            >
-              <div className="flex-shrink-0 w-32 pr-4">
-                <h4 className="text-sm font-semibold text-stone-400">{year}</h4>
-              </div>
-              <div className="flex-1">
-                <h5 className="xs:text-lg font-semibold">{title}</h5>
-                <h6 className="xs:text-base font-semibold">- {company}</h6>
-                <p className="mt-1 xs:text-sm text-stone-400">{description}</p>
-                {techStackItems && (
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    {techStackItems.map(({ id, name }) => (
-                      <span
-                        key={id}
-                        className="px-2 xs:py-1 bg-amber-700 text-yellow-200 font-semibold text-xs rounded-full"
-                      >
-                        {name}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          );
-        }
+        ({ year, title, company, description, techStackItems }, index) => (
+          <motion.div
+            key={index}
+            className="flex items-start mb-5 hover:shadow-lg p-2 rounded transition-all"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={techStackVariants}
+          >
+            <div className="flex-shrink-0 w-32 pr-4">
+              <h4 className="text-sm font-semibold text-stone-400">{year}</h4>
+            </div>
+            <div className="flex-1">
+              <h5 className="xs:text-lg font-semibold">{title}</h5>
+              <h6 className="xs:text-base font-semibold">- {company}</h6>
+              <p className="mt-1 xs:text-sm text-stone-400">{description}</p>
+              <motion.div className="mt-2 flex flex-wrap gap-2">
+                {techStackItems &&
+                  techStackItems.map(({ id, name }) => (
+                    <motion.span
+                      key={id}
+                      className="px-2 xs:py-1 bg-amber-700 text-yellow-200 font-semibold text-xs rounded-full"
+                    >
+                      {name}
+                    </motion.span>
+                  ))}
+              </motion.div>
+            </div>
+          </motion.div>
+        )
       )}
     </div>
   );

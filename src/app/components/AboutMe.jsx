@@ -45,7 +45,7 @@ export default function AboutMe() {
         variants={containerVariants} // Apply container variants here
       >
         <motion.p className={`${paragraphFormat}`} variants={childVariants}>
-          Currently, I'm working as a{" "}
+          Currently, I&apos;m working as a{" "}
           <a
             className="hover:text-accentBackground transition-all font-bold "
             href="https://www.21pstem.org/encompass"
@@ -65,11 +65,11 @@ export default function AboutMe() {
         </motion.p>
         <motion.p className={`${paragraphFormat}`} variants={childVariants}>
           Previously, I worked in B2B and B2C sales, client support, team
-          management, and leading daily meetings. I've always had a passion for
-          coding in my part time, and in 2020 I decided to go through a
+          management, and leading daily meetings. I&apos;ve always had a passion
+          for coding in my part time, and in 2020 I decided to go through a
           self-coding journey which led me enrolling in a software engineering
-          immersive course. I've been coding, fixing bugs ever since and I'm
-          loving every bit of it.
+          immersive course. I&apos;ve been coding, fixing bugs ever since and
+          I&apos;m loving every bit of it.
         </motion.p>
       </motion.div>
     </motion.div>
