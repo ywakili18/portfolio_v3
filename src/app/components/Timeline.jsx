@@ -1,8 +1,10 @@
-import { motion } from "framer-motion";
+"use client";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 export default function Timeline() {
   const events = [
     {
-      year: "01/2021 - Present",
+      year: "01/2022 - Present",
       title: "Lead Full Stack Engineer",
       company: "21PSTEM",
       description:
@@ -55,53 +57,74 @@ export default function Timeline() {
         "Appliance sales, customer service, and technical support for Airport Home Appliance.",
     },
     {
-      year: "07/2020 - 12/2020",
+      year: "02/2020 - 07/2020",
       title: "Staffing Manager",
       company: "Randstad USA",
       description:
         "Managed full-cycle recruiting process for Randstad USA. Sourced, screened, and interviewed candidates, and provided coaching and feedback to team members. Developed and implemented new recruiting strategies.",
     },
     {
-      year: "03/2014 - 08/2019",
+      year: "03/2015 - 08/2019",
       title: "Account Executive",
       company: "T-Mobile",
       description:
         "B2B sales, client relationship management, and technical support for T-Mobile products and services. ",
     },
   ];
-
+  const entryVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
   return (
     <div className="text-xs mt-10">
-      {events.map(({ year, title, company, description, techStackItems }) => (
-        <div
-          key={company}
-          className="flex items-start  pb-5 hover:shadow-2xl p-2 rounded transition-all"
-        >
-          {/* Year as a subheader */}
-          <div className="flex-shrink-0 w-32 pr-4">
-            <h4 className="text-sm font-semibold text-stone-400">{year}</h4>
-          </div>
-          {/* Main content */}
-          <div className="flex-1">
-            <h5 className="xs:text-lg font-semibold">{title}</h5>
-            <h6 className="xs:text-base font-semibold">- {company}</h6>
-            <p className="mt-1 xs:text-sm text-stone-400">{description}</p>
-            {/* Tech stack */}
-            {techStackItems && (
-              <div className="mt-2 flex flex-wrap gap-2">
-                {techStackItems.map(({ id, name }) => (
-                  <span
-                    key={id}
-                    className="px-2 xs:py-1 bg-amber-700 text-yellow-200 font-semibold text-xs rounded-full"
-                  >
-                    {name}
-                  </span>
-                ))}
+      {events.map(
+        ({ year, title, company, description, techStackItems }, index) => {
+          const controls = useAnimation();
+          const ref = useRef(null);
+          const inView = useInView(ref, { once: true });
+
+          useEffect(() => {
+            if (inView) {
+              controls.start("visible");
+            }
+          }, [controls, inView]);
+
+          return (
+            <motion.div
+              key={index}
+              ref={ref}
+              variants={entryVariants}
+              initial="hidden"
+              animate={controls}
+              className="flex items-start mb-5 hover:shadow-lg hover:shadow-accentBackground p-2 rounded transition-all"
+            >
+              <div className="flex-shrink-0 w-32 pr-4">
+                <h4 className="text-sm font-semibold text-stone-400">{year}</h4>
               </div>
-            )}
-          </div>
-        </div>
-      ))}
+              <div className="flex-1">
+                <h5 className="xs:text-lg font-semibold">{title}</h5>
+                <h6 className="xs:text-base font-semibold">- {company}</h6>
+                <p className="mt-1 xs:text-sm text-stone-400">{description}</p>
+                {techStackItems && (
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {techStackItems.map(({ id, name }) => (
+                      <span
+                        key={id}
+                        className="px-2 xs:py-1 bg-amber-700 text-yellow-200 font-semibold text-xs rounded-full"
+                      >
+                        {name}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          );
+        }
+      )}
     </div>
   );
 }

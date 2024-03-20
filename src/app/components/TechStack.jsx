@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import {
   DiHtml5,
   DiCss3,
@@ -11,6 +13,7 @@ import {
 } from "react-icons/di";
 import { FaEmber, FaSass } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
+
 const techStackItems = [
   { id: "html5", name: "HTML", Icon: DiHtml5 },
   { id: "css3", name: "CSS", Icon: DiCss3 },
@@ -27,19 +30,51 @@ const techStackItems = [
 ];
 
 export default function TechStack() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 10, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
   return (
-    <section className="mt-10 sm:mt-20">
-      <h3 className="text-lg font-semibold sm:mb-20 text-center mb-5">
-        Tech Stack
-      </h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5">
+    <motion.section
+      className="mt-10"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <h3 className="text-lg font-semibold  text-center mb-10">Tech Stack</h3>
+      <motion.div
+        className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5"
+        variants={containerVariants}
+      >
         {techStackItems.map(({ id, name, Icon }) => (
-          <div key={id} className="flex flex-col items-center">
+          <motion.div
+            key={id}
+            className="flex flex-col items-center"
+            variants={itemVariants}
+          >
             <Icon className="text-3xl sm:text-5xl" />
             <span className="text-xs sm:text-base">{name}</span>
-          </div>
+          </motion.div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

@@ -23,7 +23,7 @@ module.exports = {
         navLightBackground: "#f4f1e5",
 
         // Global
-        accentBackground: "#f59f02",
+        accentBackground: "#ed9b00",
         subheaderText: "#8c8c8c",
       },
       screens: {

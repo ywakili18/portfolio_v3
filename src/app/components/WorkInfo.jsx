@@ -57,7 +57,7 @@ export default function WorkInfo() {
   return (
     <main className="sm:px-20 sm:py-20 sm:pl-44 pt-24">
       <header className=" mb-5 sm:mb-20 text-center sm:text-start">
-        <h1 className="sm:text-5xl pt-5">My Work</h1>
+        <h1 className="sm:text-5xl pt-5 text-accentBackground">My Work</h1>
         <h2 className="text-subheaderText text-sm  md:text-base">
           A showcase of my projects and contributions.
         </h2>
