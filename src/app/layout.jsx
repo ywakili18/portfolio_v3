@@ -1,13 +1,13 @@
 // src/app/layout.js
 
 "use client";
-import { Montserrat } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/NavBar";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const space_grotesk = Montserrat({ subsets: ["latin"] });
+const space_grotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export default function Layout({ children }) {
   const [darkMode, setDarkMode] = useState(false);
@@ -29,14 +29,9 @@ export default function Layout({ children }) {
             {" "}
             <NavBar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
             {children}
-            <footer
-              className={`${
-                darkMode
-                  ? "text-subheaderText transition-colors duration-50 fixed bottom-0 right-3 tracking-wide  text-xs sm:text-base"
-                  : "text-subheaderText transition-colors duration-50 fixed bottom-0 right-3 tracking-wide  text-xs sm:text-base"
-              }`}
-            >
-              <span>yousof.dev ©2024</span>
+            <footer className="text-subheaderText transition-colors duration-50 fixed bottom-0 right-3 tracking-wide  text-xs">
+              <p>yousof.dev ©2024</p>
+              <p>Made with Next.js</p>
             </footer>
           </div>
         </motion.div>

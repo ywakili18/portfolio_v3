@@ -47,6 +47,27 @@ export default function Timeline() {
       description:
         "B2B and B2C sales, customer service, and technical support for AT&T products and services. Led daily team meetings, managed team performance, and provided coaching and feedback to team members. Developed and implemented new sales strategies, and provided training to new hires.",
     },
+    {
+      year: "07/2020 - 12/2020",
+      title: "Sales Leader",
+      company: "Airport Home Appliance",
+      description:
+        "Appliance sales, customer service, and technical support for Airport Home Appliance.",
+    },
+    {
+      year: "07/2020 - 12/2020",
+      title: "Staffing Manager",
+      company: "Randstad USA",
+      description:
+        "Managed full-cycle recruiting process for Randstad USA. Sourced, screened, and interviewed candidates, and provided coaching and feedback to team members. Developed and implemented new recruiting strategies.",
+    },
+    {
+      year: "03/2014 - 08/2019",
+      title: "Account Executive",
+      company: "T-Mobile",
+      description:
+        "B2B sales, client relationship management, and technical support for T-Mobile products and services. ",
+    },
   ];
 
   return (

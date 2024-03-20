@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 const AnimatedLink = ({ href, download, text, Icon }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const hoverAnimation = {
-    y: [0, 10, -5, 0], // Moves the icon downwards, then slightly up, and resets
-    opacity: [1, 0, 0, 1], // Fades the icon out and back in
+  const iconHoverAnimation = {
+    y: [0, 5, -5, 0],
+    opacity: [1, 0, 0, 1],
     transition: {
       y: { duration: 0.6, ease: "easeInOut" },
       opacity: { duration: 0.6, ease: "easeInOut" },
@@ -18,13 +18,13 @@ const AnimatedLink = ({ href, download, text, Icon }) => {
     <motion.a
       href={href}
       download={download}
-      className="flex items-center justify-center rounded-xl p-2"
+      className="flex items-center justify-center  p-2 rounded-xl hover:bg-accentBackground transition-all"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.div
-        animate={isHovered ? hoverAnimation : {}}
-        className="flex items-center"
+        className="flex items-center "
+        animate={isHovered ? iconHoverAnimation : {}}
       >
         {Icon && <Icon className="mr-2" />}
       </motion.div>

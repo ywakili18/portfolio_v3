@@ -23,10 +23,11 @@ module.exports = {
         navLightBackground: "#f4f1e5",
 
         // Global
-        subheaderText: "#8c8c8c", // Light accent text as a shade of grey
+        accentBackground: "#f59f02",
+        subheaderText: "#8c8c8c",
       },
       screens: {
-        xs: "400px", // Custom breakpoint for extra-small devices
+        xs: "400px",
       },
     },
   },
