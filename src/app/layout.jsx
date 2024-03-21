@@ -1,13 +1,15 @@
 // src/app/layout.js
 
 "use client";
-import { Space_Grotesk } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/NavBar";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { DiGithub } from "react-icons/di";
-const space_grotesk = Space_Grotesk({ subsets: ["latin"] });
+const roboto = Inter({
+  subsets: ["latin"],
+});
 
 export default function Layout({ children }) {
   const [darkMode, setDarkMode] = useState(false);
@@ -17,7 +19,7 @@ export default function Layout({ children }) {
 
   return (
     <html lang="en">
-      <body className={space_grotesk.className}>
+      <body className={roboto.className}>
         <motion.div>
           <div
             className={`${

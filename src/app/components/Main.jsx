@@ -49,7 +49,7 @@ export default function Main() {
             Full Stack Engineer | Front End Enthusiast
           </motion.h2>
         </motion.header>
-        <section className="flex flex-col gap-5 sm:gap-10 text-sm sm:text-2xl font-light ">
+        <section className="flex flex-col gap-5 sm:gap-10 text-sm sm:text-base  font-light">
           <div className={`${paragraphFormat}`}>
             <TextRippleEffect textLines={textLines} />
           </div>

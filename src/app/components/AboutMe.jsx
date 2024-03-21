@@ -33,15 +33,20 @@ export default function AboutMe() {
       initial="hidden"
       animate="visible"
     >
-      <header className="mb-5 sm:mb-20 text-center sm:text-start">
+      <motion.header
+        className="mb-5 sm:mb-20 text-center sm:text-start"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <h1 className="sm:text-5xl pt-5 text-accentBackground">About Me</h1>
         <h2 className="text-subheaderText text-sm md:text-base">
           Get to know me a little better
         </h2>
-      </header>
+      </motion.header>
       {/* paragraphs start here */}
       <motion.div
-        className="flex flex-col gap-8 text-xs xs:text-sm sm:text-lg"
+        className="flex flex-col gap-8 text-xs xs:text-sm sm:text-base font-light"
         variants={containerVariants} // Apply container variants here
       >
         <motion.p className={`${paragraphFormat}`} variants={childVariants}>

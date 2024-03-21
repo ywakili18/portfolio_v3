@@ -13,7 +13,7 @@ export default function Contact() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center lg:flex-row lg:gap-20   p-4">
+    <main className="min-h-screen flex flex-col items-center justify-center lg:flex-row lg:gap-20 p-4">
       <motion.section
         className="text-center mb-8"
         variants={containerVariants}
@@ -27,7 +27,7 @@ export default function Contact() {
           Feel free to reach out for collaborations or just a friendly hello 👋.
         </p>
       </motion.section>
-      <div className="space-y-4">
+      <div className="space-y-4 font-light">
         <AnimatedLink
           href="https://www.linkedin.com/in/youseffect/"
           text="Connect with me on LinkedIn"
