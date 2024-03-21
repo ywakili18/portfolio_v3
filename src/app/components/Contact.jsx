@@ -34,7 +34,7 @@ export default function Contact() {
           Icon={FaLinkedinIn}
         />
         <AnimatedLink
-          href="/yousof_wakili.pdf" // Update with your resume file
+          href="/yousof.pdf" // Update with your resume file
           text="Download my resume"
           Icon={FiDownload}
         />
