@@ -11,7 +11,7 @@ export default function WorkInfo() {
         "Proactively maintained, debugged, and added new features to the Encompass web application - a open source and non profit led project by 21PSTEM - employing a versatile tech stack including HTML, CSS, SaSS, Ember.js, React.js, Node.js, Express.js, MongoDB, Docker, Jenkins, GitHub Actions, and Jira",
       imgSrc: "/encompass.png",
       projectUrl: "https://encompass.mathematicalthinking.org/",
-      gitUrl: "https://github.com/mathematicalthinking/encompass",
+
       techStackItems: [
         { id: "html5", name: "HTML" },
         { id: "css3", name: "CSS" },
@@ -47,7 +47,7 @@ export default function WorkInfo() {
       description:
         "Developed a personal portfolio website using Next.js, Tailwindcss, framer motion, deployed on Vercel.",
       imgSrc: "/portfolio.png",
-      projectUrl: "https://reliancedm.com/",
+      projectUrl: "https://yousof.dev/",
       gitUrl: "https://github.com/ywakili18/portfolio_v3",
       techStackItems: [
         { id: "html5", name: "HTML" },
@@ -82,7 +82,7 @@ export default function WorkInfo() {
         <h1 className="text-4xl lg:text-5xl  mb-4 mt-20 lg:mt-0  text-accentBackground">
           My Work
         </h1>
-        <p className="text-base lg:text-lg">
+        <p className="text-base lg:text-lg text-subheaderText">
           A showcase of my projects and contributions.
         </p>
       </motion.header>
@@ -122,14 +122,17 @@ export default function WorkInfo() {
               >
                 Live Site <FaExternalLinkAlt />
               </a>
-              <a
-                href={project.gitUrl}
-                className="text-accentBackground hover:underline flex items-center gap-1"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub Repo <DiGithub className="text-2xl" />
-              </a>
+              {project.gitUrl && (
+                <a
+                  href={project.gitUrl}
+                  className="text-accentBackground hover:underline flex items-center gap-1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Github Repo <DiGithub />
+                </a>
+              )}
+
               <p className="mt-2 text-sm lg:text-base font-light">
                 {project.description}
               </p>
