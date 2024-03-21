@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { DiGithub } from "react-icons/di";
+import { SiPcgamingwiki } from "react-icons/si";
 const roboto = Inter({
   subsets: ["latin"],
 });
@@ -19,6 +20,7 @@ export default function Layout({ children }) {
 
   return (
     <html lang="en">
+      <link rel="icon" href="/logo.png" sizes="any" />
       <body className={roboto.className}>
         <motion.div>
           <div
