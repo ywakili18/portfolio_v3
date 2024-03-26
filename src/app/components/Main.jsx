@@ -67,7 +67,7 @@ export default function Main() {
           >
             <div className="relative w-full h-0 pb-[166.66%]">
               <Image
-                src="/profile_pic.png"
+                src="/profilePic.png"
                 alt="A picture of Yousof Wakili"
                 layout="fill"
                 objectFit="contain"
